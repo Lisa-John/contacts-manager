@@ -14,9 +14,17 @@ public class Input {
     }
 
     public String getString(String prompt) {
-//        prompt = "yes or no?";
         System.out.println(prompt);
         return getString();
+    }
+    
+    public String getStrings() {
+		return this.sc.nextLine();
+    }
+
+    public String getStrings(String prompt) {
+        System.out.println(prompt);
+        return getStrings();
     }
 
     public boolean yesNo() {
@@ -30,7 +38,7 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        System.out.println("Enter an integer between " + min + " and " + max);
+        System.out.println("Select an option between " + min + " and " + max);
         int value = getInt();
         if (value < min || value > max) {
             return getInt(min, max);
@@ -43,7 +51,7 @@ public class Input {
         try {
             return Integer.valueOf(input);
         } catch(NumberFormatException e) {
-            System.out.println("Must input an integer.");
+            System.out.println("Must input a number.");
             return getInt();
         }
     }
