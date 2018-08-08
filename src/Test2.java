@@ -62,8 +62,28 @@ public class Test2 {
 		}
 
 
+//If it finds contact will continue and write to new list
+		List<String> contactListR = null;
+		try {
+			contactListR = Files.readAllLines(contactsPath);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
+		List<String> newList = new ArrayList<>();
+		for (String contact : contactListR) {
+			if (contact.contains("Sam")) {
+				newList.add("Wag Man");
+				continue;
+			}
+			newList.add(contact);
 
+		}
+		try {
+			Files.write(contactsPath, newList);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 
 //Reads the file
