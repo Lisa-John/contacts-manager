@@ -20,6 +20,7 @@ public class ContactsManager {
 		defaultMenu();
 		
 	}//================ end of main =================
+	
 	static void defaultMenu(){
 		menu(); //show menu
 		menuSelection(input.getInt(1,5)); //user selection
